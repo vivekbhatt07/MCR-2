@@ -86,8 +86,8 @@ const Home = () => {
                   value={habitData.habitRepeat}
                 >
                   <option value="daily">Daily</option>
-                  <option value="alternate">Monthly</option>
-                  <option value="weekly">Yearly</option>
+                  <option value="alternate">Alternate</option>
+                  <option value="weekly">Weekly</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1">
