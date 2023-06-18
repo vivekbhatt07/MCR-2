@@ -14,7 +14,16 @@ const Home = () => {
   const [isHabitOpen, setIsHabitOpen] = useState(false);
 
   const handleOpenHabit = () => setIsHabitOpen(true);
-  const handleCloseHabit = () => setIsHabitOpen(false);
+  const handleCloseHabit = () => {
+    setIsHabitOpen(false);
+    setHabitData({
+      habitName: "",
+      habitRepeat: "",
+      habitGoal: "",
+      habitDay: "",
+      habitStart: "",
+    });
+  };
 
   const [habitData, setHabitData] = useState({
     habitName: "",
@@ -35,14 +44,6 @@ const Home = () => {
     event.preventDefault();
     handleCloseHabit();
   };
-
-  // const repeat = ["Daily", "Monthly", "Yearly"];
-
-  // const goals = ["1 times", "2 times", "3 times"];
-
-  // const timeOfTheDay = ["Morning", "Afternoon", "Evening", "Night", "Any Time"];
-
-  const startDate = ["Today", "Tomorrow", "Day after tomorrow"];
 
   return (
     <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
