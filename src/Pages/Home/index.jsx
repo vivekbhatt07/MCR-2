@@ -36,6 +36,14 @@ const Home = () => {
     handleCloseHabit();
   };
 
+  // const repeat = ["Daily", "Monthly", "Yearly"];
+
+  // const goals = ["1 times", "2 times", "3 times"];
+
+  // const timeOfTheDay = ["Morning", "Afternoon", "Evening", "Night", "Any Time"];
+
+  const startDate = ["Today", "Tomorrow", "Day after tomorrow"];
+
   return (
     <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
       <Header />
@@ -77,10 +85,9 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitRepeat}
                 >
-                  <option value="daily">daily</option>
-                  <option value="alternate">alternate</option>
-                  <option value="weekly">weekly</option>
-                  <option value="monthly">monthly</option>
+                  <option value="daily">Daily</option>
+                  <option value="alternate">Monthly</option>
+                  <option value="weekly">Yearly</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1">
@@ -90,10 +97,10 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitGoal}
                 >
-                  <option value="daily">daily</option>
-                  <option value="alternate">alternate</option>
-                  <option value="weekly">weekly</option>
-                  <option value="monthly">monthly</option>
+                  <option value="one">1 Time</option>
+                  <option value="two">2 Times</option>
+                  <option value="three">3 Times</option>
+                  <option value="four">4 Times</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1">
@@ -103,10 +110,11 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitDay}
                 >
-                  <option value="daily">daily</option>
-                  <option value="alternate">alternate</option>
-                  <option value="weekly">weekly</option>
-                  <option value="monthly">monthly</option>
+                  <option value="morning">Morning</option>
+                  <option value="afternoon">Afternoon</option>
+                  <option value="evening">Evening</option>
+                  <option value="night">Night</option>
+                  <option value="anytime">Anytime</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1">
@@ -116,10 +124,9 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitStart}
                 >
-                  <option value="daily">daily</option>
-                  <option value="alternate">alternate</option>
-                  <option value="weekly">weekly</option>
-                  <option value="monthly">monthly</option>
+                  <option value="today">Today</option>
+                  <option value="tomorrow">Tomorrow</option>
+                  <option value="overmorrow">Overmorrow</option>
                 </select>
               </label>
               <div className="flex gap-2">
