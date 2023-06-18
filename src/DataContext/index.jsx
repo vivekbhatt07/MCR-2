@@ -21,6 +21,15 @@ const DataReducer = (state, action) => {
     case "ADD_HABIT": {
       return { ...state };
     }
+    case "EDIT_HABIT": {
+      return { ...state };
+    }
+    case "DELETE_HABIT": {
+      return { ...state };
+    }
+    case "ARCHIVE_HABIT": {
+      return { ...state };
+    }
   }
 };
 
