@@ -6,6 +6,7 @@ import ModalProvider from "../../Component/ModalProvider";
 import { useData } from "../../DataContext/index";
 import HabitCard from "../../Component/HabitCard";
 import "./Home.css";
+import Header from "../../Component/Header";
 
 const Home = () => {
   const { state, dispatch } = useData();
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
+      <Header />
       <h1 className="text-center mb-6 text-4xl text-blue-50">FITNESS FREAK</h1>
       <div className="mx-auto">
         <ModalProvider

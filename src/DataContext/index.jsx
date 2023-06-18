@@ -25,10 +25,26 @@ const DataReducer = (state, action) => {
       return { ...state };
     }
     case "DELETE_HABIT": {
-      return { ...state };
+      return {
+        ...state,
+        habitList: state.habitList.filter((current) => {
+          return current.id !== action.payload;
+        }),
+      };
     }
     case "ARCHIVE_HABIT": {
-      return { ...state };
+      return {
+        ...state,
+        habitList: state.habitList.filter((current) => {
+          return current.id != action.payload;
+        }),
+        archiveList: [
+          ...state.archiveList,
+          state.habitList.find((current) => {
+            return current.id == action.payload;
+          }),
+        ],
+      };
     }
   }
 };

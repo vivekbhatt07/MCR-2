@@ -11,7 +11,7 @@ const Detail = () => {
   });
 
   return (
-    <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen">
+    <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
       <h1>{getHabit.title}</h1>
     </div>
   );
