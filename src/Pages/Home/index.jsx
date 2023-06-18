@@ -152,27 +152,29 @@ const Home = () => {
                   Discard
                 </Button>
 
-                <Button
-                  variant="contained"
-                  className="basis-1/3"
-                  type="submit"
-                  onClick={() =>
-                    dispatch({ type: "EDIT_HABIT", payload: habitData })
-                  }
-                >
-                  Edit
-                </Button>
-
-                <Button
-                  variant="contained"
-                  className="basis-1/3"
-                  type="submit"
-                  onClick={() =>
-                    dispatch({ type: "ADD_HABIT", payload: habitData })
-                  }
-                >
-                  Save
-                </Button>
+                {habitData.id ? (
+                  <Button
+                    variant="contained"
+                    className="basis-1/3"
+                    type="submit"
+                    onClick={() =>
+                      dispatch({ type: "EDIT_HABIT", payload: habitData })
+                    }
+                  >
+                    Edit
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    className="basis-1/3"
+                    type="submit"
+                    onClick={() => {
+                      dispatch({ type: "ADD_HABIT", payload: habitData });
+                    }}
+                  >
+                    Save
+                  </Button>
+                )}
               </div>
             </form>
           </div>
