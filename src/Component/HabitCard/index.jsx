@@ -14,6 +14,7 @@ const HabitCard = (props) => {
           onClick={() => {
             props.openModal();
             props.setModalData({
+              id: props.id,
               habitName: props.habitName,
               habitRepeat: props.habitRepeat,
               habitGoal: props.habitGoal,

@@ -71,7 +71,9 @@ const DataReducer = (state, action) => {
       return {
         ...state,
         habitList: state.habitList.map((current) => {
-          // return current.id == action.pa
+          return current.id == action.payload.id
+            ? { ...action.payload }
+            : current;
         }),
       };
     }

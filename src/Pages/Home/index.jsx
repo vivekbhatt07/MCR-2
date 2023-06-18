@@ -33,7 +33,6 @@ const Home = () => {
 
   const habitSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch({ type: "ADD_HABIT", payload: habitData });
     handleCloseHabit();
   };
 
@@ -145,6 +144,9 @@ const Home = () => {
                     variant="contained"
                     className="basis-1/2"
                     type="submit"
+                    onClick={() =>
+                      dispatch({ type: "EDIT_HABIT", payload: habitData })
+                    }
                   >
                     Edit
                   </Button>
@@ -153,6 +155,9 @@ const Home = () => {
                     variant="contained"
                     className="basis-1/2"
                     type="submit"
+                    onClick={() =>
+                      dispatch({ type: "ADD_HABIT", payload: habitData })
+                    }
                   >
                     Save
                   </Button>
