@@ -86,6 +86,7 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitRepeat}
                 >
+                  <option value="">--SELECT REPEAT--</option>
                   <option value="daily">Daily</option>
                   <option value="alternate">Alternate</option>
                   <option value="weekly">Weekly</option>
@@ -98,6 +99,7 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitGoal}
                 >
+                  <option value="">--SELECT GOAL--</option>
                   <option value="one">1 Time</option>
                   <option value="two">2 Times</option>
                   <option value="three">3 Times</option>
@@ -111,6 +113,7 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitDay}
                 >
+                  <option value="">--SELECT DAY--</option>
                   <option value="morning">Morning</option>
                   <option value="afternoon">Afternoon</option>
                   <option value="evening">Evening</option>
@@ -125,6 +128,7 @@ const Home = () => {
                   onChange={handleHabitData}
                   value={habitData.habitStart}
                 >
+                  <option value="">--SELECT START--</option>
                   <option value="today">Today</option>
                   <option value="tomorrow">Tomorrow</option>
                   <option value="overmorrow">Overmorrow</option>
@@ -133,7 +137,7 @@ const Home = () => {
               <div className="flex gap-2">
                 <Button
                   variant="contained"
-                  className="basis-1/2"
+                  className="basis-1/3"
                   onClick={() => {
                     handleCloseHabit();
                     setHabitData({
@@ -147,29 +151,28 @@ const Home = () => {
                 >
                   Discard
                 </Button>
-                {habitData.habitName ? (
-                  <Button
-                    variant="contained"
-                    className="basis-1/2"
-                    type="submit"
-                    onClick={() =>
-                      dispatch({ type: "EDIT_HABIT", payload: habitData })
-                    }
-                  >
-                    Edit
-                  </Button>
-                ) : (
-                  <Button
-                    variant="contained"
-                    className="basis-1/2"
-                    type="submit"
-                    onClick={() =>
-                      dispatch({ type: "ADD_HABIT", payload: habitData })
-                    }
-                  >
-                    Save
-                  </Button>
-                )}
+
+                <Button
+                  variant="contained"
+                  className="basis-1/3"
+                  type="submit"
+                  onClick={() =>
+                    dispatch({ type: "EDIT_HABIT", payload: habitData })
+                  }
+                >
+                  Edit
+                </Button>
+
+                <Button
+                  variant="contained"
+                  className="basis-1/3"
+                  type="submit"
+                  onClick={() =>
+                    dispatch({ type: "ADD_HABIT", payload: habitData })
+                  }
+                >
+                  Save
+                </Button>
               </div>
             </form>
           </div>
