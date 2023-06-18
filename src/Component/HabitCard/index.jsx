@@ -7,11 +7,20 @@ const HabitCard = (props) => {
   const { state, dispatch } = useData();
   return (
     <div className="bg-blue-400 p-4 flex flex-col gap-6">
-      <h3 className="text-3xl text-center">{props.title}</h3>
+      <h3 className="text-3xl text-center">{props.habitName}</h3>
       <div className="flex gap-2">
         <Button
           variant="contained"
-          onClick={() => dispatch({ type: "EDIT_HABIT", payload: props.id })}
+          onClick={() => {
+            props.openModal();
+            props.setModalData({
+              habitName: props.habitName,
+              habitRepeat: props.habitRepeat,
+              habitGoal: props.habitGoal,
+              habitDay: props.habitDay,
+              habitStart: props.habitStart,
+            });
+          }}
           className="basis-1/3"
         >
           EDIT

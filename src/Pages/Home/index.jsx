@@ -37,8 +37,6 @@ const Home = () => {
     handleCloseHabit();
   };
 
-  console.log(state.habitList);
-
   return (
     <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
       <Header />
@@ -142,9 +140,23 @@ const Home = () => {
                 >
                   Discard
                 </Button>
-                <Button variant="contained" className="basis-1/2" type="submit">
-                  Save
-                </Button>
+                {habitData.habitName ? (
+                  <Button
+                    variant="contained"
+                    className="basis-1/2"
+                    type="submit"
+                  >
+                    Edit
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    className="basis-1/2"
+                    type="submit"
+                  >
+                    Save
+                  </Button>
+                )}
               </div>
             </form>
           </div>
@@ -154,7 +166,14 @@ const Home = () => {
         <h2 className="text-center text-4xl">Habit List</h2>
         <div className="habit_list">
           {state.habitList.map((currentHabit) => {
-            return <HabitCard key={currentHabit.id} {...currentHabit} />;
+            return (
+              <HabitCard
+                key={currentHabit.id}
+                {...currentHabit}
+                openModal={handleOpenHabit}
+                setModalData={setHabitData}
+              />
+            );
           })}
         </div>
       </section>

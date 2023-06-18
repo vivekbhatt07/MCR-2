@@ -1,14 +1,57 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const DataContext = createContext();
 
 const Data = [
-  { id: "1", title: "Meditate" },
-  { id: "2", title: "Running" },
-  { id: "3", title: "Drink" },
-  { id: "4", title: "Read" },
-  { id: "5", title: "Stretch" },
-  { id: "6", title: "Gym" },
+  {
+    id: uuidv4(),
+    habitName: "Meditate",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
+  {
+    id: uuidv4(),
+    habitName: "Running",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
+  {
+    id: uuidv4(),
+    habitName: "Drink",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
+  {
+    id: uuidv4(),
+    habitName: "Read",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
+  {
+    id: uuidv4(),
+    habitName: "Stretch",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
+  {
+    id: uuidv4(),
+    habitName: "Gym",
+    habitRepeat: "",
+    habitGoal: "",
+    habitDay: "",
+    habitStart: "",
+  },
 ];
 
 const InitialState = {
@@ -19,10 +62,18 @@ const InitialState = {
 const DataReducer = (state, action) => {
   switch (action.type) {
     case "ADD_HABIT": {
-      return { ...state, habitList: [...state.habitList, action.payload] };
+      return {
+        ...state,
+        habitList: [...state.habitList, { id: uuidv4(), ...action.payload }],
+      };
     }
     case "EDIT_HABIT": {
-      return { ...state };
+      return {
+        ...state,
+        habitList: state.habitList.map((current) => {
+          // return current.id == action.pa
+        }),
+      };
     }
     case "DELETE_HABIT": {
       return {
