@@ -19,7 +19,7 @@ const InitialState = {
 const DataReducer = (state, action) => {
   switch (action.type) {
     case "ADD_HABIT": {
-      return { ...state };
+      return { ...state, habitList: [...state.habitList, action.payload] };
     }
     case "EDIT_HABIT": {
       return { ...state };

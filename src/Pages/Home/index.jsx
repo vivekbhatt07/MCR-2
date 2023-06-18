@@ -33,9 +33,11 @@ const Home = () => {
 
   const habitSubmitHandler = (event) => {
     event.preventDefault();
-    console.log(habitData);
+    dispatch({ type: "ADD_HABIT", payload: habitData });
     handleCloseHabit();
   };
+
+  console.log(state.habitList);
 
   return (
     <div className="max-w-[1280px] mx-auto bg-blue-950 min-h-screen px-6 py-4 flex flex-col gap-12">
